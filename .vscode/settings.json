@@ -4,6 +4,10 @@
         "*.vue": "html",
         "*.ejs": "html",
         "*.js": "javascript",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "unordered_map": "cpp",
+        "string": "cpp",
+        "ostream": "cpp",
+        "string_view": "cpp"
     }
 }

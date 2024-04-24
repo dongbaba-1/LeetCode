@@ -23,10 +23,22 @@ void heapify(int arr[],int n,int i){
 }
 
 //利用维护堆操作进行堆排序
-void HeapSort(int* arr,int n){
+void HeapSort(int arr[],int n){
     //首先把一个无序数组建成堆
-    for(int i = n/2;i >= 0;i--){
+    for(int i = n/2-1;i >= 0;i--){
         heapify(arr,n,i);
+    }
+    //把根节点与最后一个节点交换，并调用堆维护操作重新调整为大根堆
+    int end = n-1;
+    int num = n;//当前剩余待排序节点数
+    for (int i = 0; i < n; i++)
+    {
+        swap(arr[0],arr[end]);
+        end--;
+        num--;
+        for(int j = num/2-1;j >= 0;j--){
+            heapify(arr,num,j);
+        }
     }
 }
 int main(int argc, char const *argv[])
